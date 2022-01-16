@@ -1,14 +1,13 @@
 fn main() {
-    let s = String::from("abcd");
-    let len = calc_length(&s);
-    println!("length is {}", len);
-    let mut s = String::from("Hello");
-    change(&mut s);
-    println!("{}", s);
+    let mut s = String::from("hello");
 
-    let r1 = &mut s;
-    let r2 = &mut s;
-    println!("{}{}", r1, r2);
+    let r1 = &s; // no problem
+    let r2 = &s; // no problem
+
+    println!("{}, {}", r1, r2);
+    let r3 = &mut s; // BIG PROBLEM
+
+    println!("{}", r3);
 }
 
 
