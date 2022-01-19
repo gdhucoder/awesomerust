@@ -13,7 +13,9 @@ fn main() {
     match dice_roll {
         3 => {println!("hello 3")},
         // other situation
-        _ => reroll(),
+        // _ => reroll(),
+        // do not run any code
+        _ => (),
     }
 }
 
