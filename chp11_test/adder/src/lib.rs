@@ -39,6 +39,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore]
     fn exploration() {
         let result = 2 + 2;
         assert_eq!(result, 4);
