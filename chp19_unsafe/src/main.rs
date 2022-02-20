@@ -32,7 +32,28 @@ fn main() {
     assert_eq!(b, &mut [4,5,6]);
     println!("{:?}", a);
 
+    unsafe {
+        println!("C: {}", abs(-10));
+    }
+
+    println!("name is {},", HELLO_WORLD);
+
+    // HELLO_WORLD = "sfd";
+    add_to_count(3);
+    unsafe {
+        println!("{}", COUNTER);
+    }
 }
+
+static mut COUNTER: u32 = 0;
+
+fn add_to_count(inc: u32) {
+    unsafe {
+        COUNTER += inc;
+    }
+}
+
+static HELLO_WORLD: &str = "Hello, world!";
 
 unsafe fn dangerous() {
     println!("This is dangerous!");
@@ -50,5 +71,11 @@ fn split_at_mut(slice: &mut[i32], mid:usize) -> (&mut [i32], &mut [i32]) {
             slice::from_raw_parts_mut(ptr.add(mid), len-mid)
         )
     }
+    
 
+}
+
+// amazing!, call C language
+extern "C" {
+    fn abs(input: i32) -> i32;
 }
