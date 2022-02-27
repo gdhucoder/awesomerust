@@ -1,0 +1,43 @@
+
+httpie get "http://localhost:3000/image/CgoKCAjYBBCgBiADCgY6BAgUEBQKBDICCAM/https%3A%2F%2Fimages%2Epexels%2Ecom%2Fphotos%2F2470905%2Fpexels%2Dphoto%2D2470905%2Ejpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D2%26h%3D750%26w%3D1260"
+HTTP/1.1 200 OK
+
+content-type: "text/plain"
+content-length: "901"
+date: "Wed, 25 Aug 2021 18:03:50 GMT"
+
+url: https://images.pexels.com/photos/2470905/pexels-photo-2470905.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
+ spec: ImageSpec {
+    specs: [
+        Spec {
+            data: Some(
+                Resize(
+                    Resize {
+                        width: 600,
+                        height: 800,
+                        rtype: Normal,
+                        filter: CatmullRom,
+                    },
+                ),
+            ),
+        },
+        Spec {
+            data: Some(
+                Watermark(
+                    Watermark {
+                        x: 20,
+                        y: 20,
+                    },
+                ),
+            ),
+        },
+        Spec {
+            data: Some(
+                Filter(
+                    Filter {
+                        filter: Marine,
+                    },
+                ),
+            ),
+        },
+    ],
