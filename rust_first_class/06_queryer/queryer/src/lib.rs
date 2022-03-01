@@ -1,3 +1,5 @@
+mod dialect;
+
 #[cfg(test)]
 mod tests {
     #[test]
