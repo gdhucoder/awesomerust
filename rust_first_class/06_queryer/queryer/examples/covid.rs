@@ -7,12 +7,12 @@ use reqwest::header::REFERER;
 #[tokio::main]
 async fn main() -> Result<()> {
     tracing_subscriber::fmt::init();
-    // 
-    // https://github.com/owid/covid-19-data/blob/master/public/data/latest/owid-covid-latest.csv
+
+    
     let url = "https://raw.github.com/owid/covid-19-data/master/public/data/latest/owid-covid-latest.csv";
     let data = reqwest::get(url).await?.text().await?;
 
-    println!("{:?}", data);
+    // println!("{:?}", data);
 
     // 使用 polars 直接请求
     let df = CsvReader::new(Cursor::new(data))
