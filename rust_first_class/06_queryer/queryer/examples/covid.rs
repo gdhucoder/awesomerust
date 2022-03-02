@@ -17,5 +17,8 @@ async fn main() -> Result<()> {
     let df1 = query(sql).await?;
     println!("{:?}", df1);
 
+    // 转换成了csv格式
+    let csv = df1.to_csv();
+    println!("{:?}", csv);
     Ok(())
 }
